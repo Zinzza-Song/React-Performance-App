@@ -1,18 +1,18 @@
-import 'react';
+import { memo } from 'react';
 
-const Message = ({ message }) => {
+const Message = memo(({ message }) => {
   return <p>{message}</p>;
-};
+});
 
-const ListItem = ({ post }) => {
+const ListItem = memo(({ post }) => {
   return (
     <li key={post.id}>
       <p>{post.title}</p>
     </li>
   );
-};
+});
 
-const List = ({ posts }) => {
+const List = memo(({ posts }) => {
   return (
     <ul>
       {posts.map((post) => (
@@ -20,7 +20,7 @@ const List = ({ posts }) => {
       ))}
     </ul>
   );
-};
+});
 
 const B = ({ message, posts }) => {
   return (
